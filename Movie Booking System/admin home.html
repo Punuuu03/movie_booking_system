@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Page</title>
+<link rel="stylesheet" href="css/adminhome.css">
+</head>
+<body>
+    <header class="top-nav">
+        <div class="logo">Admin Dashboard</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="sidebar">
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Dashboard</a></li>
+                <li><a href="products.php">Movies</a></li>
+                <li><a href="view apply stud.php">Bookings</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header class="content-header">
+            <h1>Welcome to the Admin Dashboard</h1>
+        </header>
+
+        <section class="statistics">
+            <h2>Statistics</h2>
+            <div class="stat-cards">
+                <div class="stat-card"><a href="admin.php">
+                    <h3>Add Movies</h3>
+                    <p id="total-users">100</p>
+                    </a>
+                
+                </div>
+                <div class="stat-card"><a href="view apply stud.php">
+                    <h3>Total Booking</h3>
+                    <p id="total-movies">50</p>
+                </a>
+                </div>
+                <div class="stat-card"><a href="add_food.php">
+                    <h3>Add Food Items</h3>
+                    <p id="total-bookings">200</p>
+                    </a>
+                </div>
+                <div class="stat-card"><a href="admin_view_orders.php">
+                    <h3>Total Food Ordering</h3>
+                    <p id="total-bookings">200</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="recent-activity">
+            <h2>Recent Activity</h2>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <p><strong>John Doe</strong> added a new movie <strong>Avengers: Endgame</strong>.</p>
+                    <span class="activity-time">2 hours ago</span>
+                </div>
+                <div class="activity-item">
+                    <p><strong>Jane Smith</strong> updated user information.</p>
+                    <span class="activity-time">Yesterday</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

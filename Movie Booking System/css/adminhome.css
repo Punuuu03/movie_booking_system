@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.top-nav {
+    width: 100%;
+    background-color: #3f4042;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.top-nav .logo {
+    font-size: 1.5em;
+}
+
+.top-nav nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.top-nav nav ul li {
+    margin-right: 20px;
+}
+
+.top-nav nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.top-nav nav ul li a:hover {
+    background-color: #0056b3;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #3a3b3d;
+    color: #fff;
+    height: 100vh;
+    position: fixed;
+    top: 0; /* Adjust for top-nav height */
+    left: 0;
+    padding-top: 50px; /* Adjust for top-nav height */
+}
+
+.sidebar .logo {
+    display: none; /* Hide the redundant logo in sidebar */
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    width: 100%;
+}
+
+.sidebar nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+    background-color: #282a2b;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    padding-top: 70px; /* Adjust for top-nav height */
+    flex: 1;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.statistics, .recent-activity {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.statistics h2, .recent-activity h2 {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.stat-cards {
+    display: flex;
+    justify-content: space-between;
+}
+a{
+    text-decoration: none;
+    color: #090909;
+}
+
+.stat-card {
+    background-color: #f0f0f0;
+    /* padding: 20px; */
+    text-align: center;
+    border-radius: 5px;
+    flex-basis: 22%;
+    height: 130px;
+}
+
+.activity-item {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.activity-item p {
+    margin: 0;
+}
+
+.activity-time {
+    color: #777;
+    font-size: 0.9em;
+}

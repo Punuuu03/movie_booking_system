@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9; 
+}
+
+.container {
+    width: 380px; 
+    max-width: 100%; 
+    min-height: 400px; 
+    border-radius: 8px;
+    padding: 20px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    background-color: #fff; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.title {
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 20px;
+    color: #333; 
+    text-align: center;
+}
+
+.category {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.category label {
+    height: 160px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    cursor: pointer;
+    border-radius: 8px;
+    position: relative;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.category label:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-5px); 
+}
+
+.check {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.imgName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.imgName span {
+    font-size: 18px;
+    color: #333; 
+    text-align: center;
+    margin-top: 10px;
+}
+
+.imgName .imgContainer {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #f0e68c; 
+}
+
+img {
+    width: 40px;
+    height: auto;
+}
+
+button {
+    background-color: #4caf50; 
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%; 
+}
+
+button:hover {
+    background-color: #45a049; 
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none;
+}
+
+#paymentMessage {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#paymentMessage p {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333; 
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    color: #333; 
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: calc(100% - 24px); 
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4caf50; 
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5); 
+}
+
+</head>
+<body>
+
+</style><div class="container">
+    <div class="title">
+        <h4>Select a <span style="color: #6064b6">Payment</span> method</h4>
+    </div>
+
+    <form id="paymentForm" action="process_payment.php" method="post">
+        <div class="category">
+            <label for="visa" class="visaMethod">
+                <div class="imgName">
+                    <div class="imgContainer visa">
+                        <img src="https://i.ibb.co/vjQCN4y/Visa-Card.png" alt="Visa">
+                    </div>
+                    <span class="name">VISA</span>
+                </div>
+                <input type="radio" id="visa" name="payment_method" value="visa" required>
+                <span class="check"><i class="fa-solid fa-circle-check" style="color: #6064b6;"></i></span>
+            </label>
+
+            <label for="mastercard" class="mastercardMethod">
+                <div class="imgName">
+                    <div class="imgContainer mastercard">
+                        <img src="https://i.ibb.co/vdbBkgT/mastercard.jpg" alt="Mastercard">
+                    </div>
+                    <span class="name">Mastercard</span>
+                </div>
+                <input type="radio" id="mastercard" name="payment_method" value="mastercard" required>
+                <span class="check"><i class="fa-solid fa-circle-check" style="color: #6064b6;"></i></span>
+            </label>
+
+            <label for="paypal" class="paypalMethod">
+                <div class="imgName">
+                    <div class="imgContainer paypal">
+                        <img src="https://i.ibb.co/KVF3mr1/paypal.png" alt="Paypal">
+                    </div>
+                    <span class="name">Paypal</span>
+                </div>
+                <input type="radio" id="paypal" name="payment_method" value="paypal" required>
+                <span class="check"><i class="fa-solid fa-circle-check" style="color: #6064b6;"></i></span>
+            </label>
+
+            <label for="amex" class="amexMethod">
+                <div class="imgName">
+                    <div class="imgContainer amex">
+                        <img src="https://i.ibb.co/wQnrX86/American-Express.jpg" alt="AMEX">
+                    </div>
+                    <span class="name">AMEX</span>
+                </div>
+                <input type="radio" id="amex" name="payment_method" value="amex" required>
+                <span class="check"><i class="fa-solid fa-circle-check" style="color: #6064b6;"></i></span>
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+        </div>
+
+        <div class="form-group">
+            <label for="pic_code">PIC Code:</label>
+            <input type="text" id="pic_code" name="pic_code" required>
+        </div>
+
+        <button type="submit" id="submitPayment">Send Payment</button>
+    </form>
+
+    <div id="paymentMessage" class="hidden">
+        <p id="paymentStatus"></p>
+    </div>
+</div>
+
+<script>
+    document.getElementById('paymentForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent form submission
+
+        // Simulate successful payment message
+        document.getElementById('paymentStatus').textContent = 'Payment sent successfully!';
+        document.getElementById('paymentMessage').classList.remove('hidden');
+
+        // Reset form after 2 seconds
+        setTimeout(function() {
+            document.getElementById('paymentForm').reset(); // Reset form fields
+            document.getElementById('paymentMessage').classList.add('hidden'); // Hide message
+            document.getElementById('paymentStatus').textContent = ''; // Clear message text
+        }, 2000); // Adjust time delay as needed
+    });
+</script>
+
+</body>
+</html>
